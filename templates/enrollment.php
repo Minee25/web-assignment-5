@@ -30,9 +30,9 @@
                   <td class="p-3 text-left"><?= htmlspecialchars($enrollment['course_name']) ?></td>
                   <td class="p-3 text-left"><?= htmlspecialchars($enrollment['instructor']) ?></td>
                   <td class="text-center">
-                    <form action="drop" method="post">
+                    <form action="/drop" method="post" class="delete-form">
                       <input type="hidden" name="enrollment_id" value="<?= $enrollment['enrollment_id'] ?>">
-                      <button class="cursor-pointer text-red-600 font-medium rounded-lg p-1 text-lg outline-none hover:text-red-700 active:ring-2 active:ring-red-300 duration-300">
+                      <button type="submit" class="cursor-pointer text-red-600 font-medium rounded-lg p-1 text-lg outline-none hover:text-red-700 active:ring-2 active:ring-red-300 duration-300">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </form>
@@ -46,3 +46,31 @@
     </div>
   </div>
 </div>
+
+<script>
+  const deleteForms = document.querySelectorAll(".delete-form");
+
+  deleteForms.forEach((form) => {
+    const handleSubmit = function(e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: "คุณต้องการลบหรือไม่?",
+        text: "คุณลบแล้วจะไม่สามารถย้อนกลับได้!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "ลบเลย",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.removeEventListener("submit", handleSubmit);
+          form.submit();
+        }
+      });
+    };
+    
+    form.addEventListener("submit", handleSubmit);
+  });
+</script>
