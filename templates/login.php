@@ -1,8 +1,8 @@
 <div class="container mx-auto ">
   <div class="flex flex-col justify-center items-center min-h-[calc(100vh-80px)] p-4">
     <div class="w-full max-w-2xl rounded-md shadow-lg">
-      <div class="bg-blue-500 rounded-t-md ">
-        <h1 class="text-white text-center text-3xl p-3">เข้าสู่ระบบ</h1>
+      <div class="bg-primary rounded-t-2xl">
+        <h1 class="text-white text-center text-3xl p-3 font-serif">เข้าสู่ระบบ</h1>
       </div>
       
       <?php if (!empty($error)) { ?>
@@ -29,23 +29,23 @@
 
       <form action="/login" method="post" class="flex flex-col p-4">
         <div>
-          <label for="email" class="block my-2 text-sm text-gray-600">
+          <label for="email" class="block my-2 text-sm text-dark/70">
             อีเมล <span class="text-red-500">*</span>
           </label>
-          <input type="email" name="email" id="email" placeholder="อีเมล" autofocus required class="w-full p-2.5 text-black bg-gray-50 text-base rounded-lg border focus:outline focus:outline-2 focus:outline-blue-500 focus:border focus:ring-blue-500 focus:border-blue-500 block">
+          <input type="email" name="email" id="email" placeholder="อีเมล" autofocus required class="w-full p-2.5 text-dark bg-cream/50 text-base rounded-xl border border-cream focus:outline focus:outline-2 focus:outline-primary focus:border-primary block">
         </div>
 
         <div>
-          <label for="password" class="block my-2 text-sm text-gray-600">
+          <label for="password" class="block my-2 text-sm text-dark/70">
             รหัสผ่าน <span class="text-red-500">*</span>
           </label>
-          <input type="password" name="password" id="password" placeholder="รหัสผ่าน" required class="w-full p-2.5 text-black bg-gray-50 text-base rounded-lg border focus:outline focus:outline-2 focus:outline-blue-500 focus:border focus:ring-blue-500 focus:border-blue-500 block">
+          <input type="password" name="password" id="password" placeholder="รหัสผ่าน" required class="w-full p-2.5 text-dark bg-cream/50 text-base rounded-xl border border-cream focus:outline focus:outline-2 focus:outline-primary focus:border-primary block">
         </div>
 
         <!-- Action Button -->
         <div class="w-full flex justify-end mt-8 gap-4">
-          <a href="/" class="cursor-pointer text-white bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 outline-none hover:bg-gray-700 active:ring-2 active:ring-gray-300 duration-300">ยกเลิก</a>
-          <button type="submit" class="cursor-pointer text-white bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 outline-none hover:bg-blue-700 active:ring-2 active:ring-blue-300 duration-300">เข้าสู่ระบบ</button>
+          <a href="/" class="cursor-pointer text-white bg-dark/60 font-medium rounded-xl text-sm px-5 py-2.5 outline-none hover:bg-dark active:ring-2 active:ring-dark/30 duration-300">ยกเลิก</a>
+          <button type="submit" class="cursor-pointer text-white bg-primary font-medium rounded-xl text-sm px-5 py-2.5 outline-none hover:bg-primary-hover active:ring-2 active:ring-primary/30 duration-300">เข้าสู่ระบบ</button>
         </div>
       </form>
       

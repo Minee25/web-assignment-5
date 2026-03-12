@@ -4,12 +4,12 @@
 
       <div class="flex justify-between items-center mb-6">
         <div>
-          <h1 class="text-2xl font-bold text-gray-800">จัดการรายวิชา</h1>
+          <h1 class="text-2xl font-bold text-dark font-serif">จัดการรายวิชา</h1>
         </div>
       </div>
 
       <?php if (empty($courses)) { ?>
-        <p class="bg-gray-100 text-gray-500 text-center rounded-md py-3">ยังไม่มีรายวิชา</p>
+        <p class="bg-cream text-dark/60 text-center rounded-2xl py-3">ยังไม่มีรายวิชา</p>
       <?php } else { ?>
         <div class="overflow-x-auto">
 
@@ -37,25 +37,25 @@
 
           <table class="w-full border-collapse">
             <thead>
-              <tr class="bg-gray-100 text-gray-600 text-sm">
-                <th class="p-3 text-left">ลำดับ</th>
-                <th class="p-3 text-left">รหัสวิชา</th>
-                <th class="p-3 text-left">ชื่อวิชา</th>
-                <th class="p-3 text-left">อาจารย์ผู้สอน	</th>
-                <th class="p-3 text-left">จัดการ</th>
+              <tr class="bg-cream text-dark/70 text-sm">
+                <th class="p-3 text-left font-serif">ลำดับ</th>
+                <th class="p-3 text-left font-serif">รหัสวิชา</th>
+                <th class="p-3 text-left font-serif">ชื่อวิชา</th>
+                <th class="p-3 text-left font-serif">อาจารย์ผู้สอน	</th>
+                <th class="p-3 text-left font-serif">จัดการ</th>
               </tr>
             </thead>
-            <tbody class="text-gray-700">
+            <tbody class="text-dark">
               <?php foreach($courses as $key => $course) { ?>
-                <tr class="border-b hover:bg-gray-50">
+                <tr class="border-b border-cream hover:bg-cream/50">
                   <td class="p-3 text-left"><?= $key + 1 ?></td>
                   <td class="p-3 text-left"><?= htmlspecialchars($course['course_code']) ?></td>
-                  <td class="p-3 text-left"><?= htmlspecialchars($course['course_name']) ?></td>
+                  <td class="p-3 text-left font-medium"><?= htmlspecialchars($course['course_name']) ?></td>
                   <td class="p-3 text-left"><?= htmlspecialchars($course['instructor']) ?></td>
                   <td class="text-center">
                     <form action="courses" method="post">
                       <input type="hidden" name="course_id" value="<?= $course['course_id'] ?>">
-                      <button class="cursor-pointer text-green-600 font-medium rounded-lg p-1 text-lg outline-none hover:text-green-700 active:ring-2 active:ring-green-300 duration-300">
+                      <button class="cursor-pointer text-primary font-medium rounded-xl p-2 text-lg outline-none hover:bg-primary/10 hover:text-primary-hover active:ring-2 active:ring-primary/30 duration-300">
                         <i class="fa-solid fa-cart-plus"></i>
                       </button>
                     </form>

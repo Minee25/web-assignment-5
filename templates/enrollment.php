@@ -4,35 +4,35 @@
 
       <div class="flex justify-between items-center mb-6">
         <div>
-          <h1 class="text-2xl font-bold text-gray-800">จัดการรายวิชา</h1>
+          <h1 class="text-2xl font-bold text-dark font-serif">รายวิชาที่ลงทะเบียน</h1>
         </div>
       </div>
 
       <?php if (empty($enrollments)) { ?>
-        <p class="bg-gray-100 text-gray-500 text-center rounded-md py-3">ยังไม่มีรายวิชา</p>
+        <p class="bg-cream text-dark/60 text-center rounded-2xl py-3">ยังไม่มีรายวิชา</p>
       <?php } else { ?>
         <div class="overflow-x-auto">
           <table class="w-full border-collapse">
             <thead>
-              <tr class="bg-gray-100 text-gray-600 text-sm">
-                <th class="p-3 text-left">ลำดับ</th>
-                <th class="p-3 text-left">รหัสวิชา</th>
-                <th class="p-3 text-left">ชื่อวิชา</th>
-                <th class="p-3 text-left">อาจารย์ผู้สอน	</th>
-                <th class="p-3 text-left">จัดการ</th>
+              <tr class="bg-cream text-dark/70 text-sm">
+                <th class="p-3 text-left font-serif">ลำดับ</th>
+                <th class="p-3 text-left font-serif">รหัสวิชา</th>
+                <th class="p-3 text-left font-serif">ชื่อวิชา</th>
+                <th class="p-3 text-left font-serif">อาจารย์ผู้สอน	</th>
+                <th class="p-3 text-left font-serif">จัดการ</th>
               </tr>
             </thead>
-            <tbody class="text-gray-700">
+            <tbody class="text-dark">
               <?php foreach($enrollments as $key => $enrollment) { ?>
-                <tr class="border-b hover:bg-gray-50">
+                <tr class="border-b border-cream hover:bg-cream/50">
                   <td class="p-3 text-left"><?= $key + 1 ?></td>
                   <td class="p-3 text-left"><?= htmlspecialchars($enrollment['course_code']) ?></td>
-                  <td class="p-3 text-left"><?= htmlspecialchars($enrollment['course_name']) ?></td>
+                  <td class="p-3 text-left font-medium"><?= htmlspecialchars($enrollment['course_name']) ?></td>
                   <td class="p-3 text-left"><?= htmlspecialchars($enrollment['instructor']) ?></td>
                   <td class="text-center">
                     <form action="/drop" method="post" class="delete-form">
                       <input type="hidden" name="enrollment_id" value="<?= $enrollment['enrollment_id'] ?>">
-                      <button type="submit" class="cursor-pointer text-red-600 font-medium rounded-lg p-1 text-lg outline-none hover:text-red-700 active:ring-2 active:ring-red-300 duration-300">
+                      <button type="submit" class="cursor-pointer text-red-500 font-medium rounded-xl p-2 text-lg outline-none hover:bg-red-50 hover:text-red-600 active:ring-2 active:ring-red-200 duration-300">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </form>
